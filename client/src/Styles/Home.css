@@ -1,0 +1,23 @@
+.home-container {
+    padding: 15px;
+    background: linear-gradient(98.63deg, rgb(217, 217, 243), rgb(238, 228, 228));
+    min-height: calc(100% - 80px);
+    overflow: hidden; 
+    display: flex;
+    gap: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+}
+.main::-webkit-scrollbar, .right-aside::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+

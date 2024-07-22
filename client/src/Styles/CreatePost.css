@@ -1,0 +1,136 @@
+.main {
+    width: 52%;
+}
+
+.main .post-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px 0 15px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.post-container input {
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    background-color: rgba(40, 52, 62, 0.07);
+}
+
+.post-container .post-files {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.post-container .post-files input[type="file"] {
+    display: none;
+}
+
+/* Style the label to look like a button */
+.post-container .post-files .photo-label {
+    display: inline-block;
+    color: white;
+    color: rgb(2, 156, 2);
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.post-container .post-files .video-label {
+    display: inline-block;
+    color: white;
+    color: blue;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.post-container .post-files .schedule-label {
+    display: inline-block;
+    color: white;
+    color: #f9a225;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.post-container button {
+    background: linear-gradient(98.63deg, #f9a225, #f95f35);
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 770px){
+    .main{
+        width: 100%;
+    }
+
+    .main .post-container .post-files{
+        padding: 5px 0;        
+    }
+
+    .post-container .post-files .photo-label, .post-container .post-files .video-label, .post-container .post-files .schedule-label{
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .post-container button{
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+    .post-container input[type="text"] {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 771px) and (max-width: 1010px){
+    .main{
+        width: 100%;
+    }
+    .main .post-container .post-files{
+        padding: 5px 12px;        
+    }
+    .post-container .post-files .photo-label, .post-container .post-files .video-label, .post-container .post-files .schedule-label{
+        padding: 8px 12px;
+        font-size: 16px;
+    } 
+    .post-container button{
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    .post-container input[type="text"] {
+        font-size: 18px;
+    }
+    @media (max-width: 480px) {
+        .Toastify__toast-container {
+            width: 90% !important;
+            max-width: 90% !important;
+        }
+    
+        .Toastify__toast {
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,174 @@
+.left-aside {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: calc(100vh - 80px); /* Adjust height as per the total height minus the fixed height of navbar or other fixed elements */
+    overflow-y: auto; /* Enable vertical scrolling */
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.left-aside::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+
+.left-aside .profile-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-card h3 {
+    font-size: 20px;
+}
+
+.profile-card p {
+    font-size: 16px;
+    color: rgb(107, 103, 103);
+    text-align: center;
+    white-space: pre-line;
+}
+
+.profile-card .follower-following {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+    width: 90%;
+}
+
+.profile-card .follower-following h3, .profile-card .follower-following p {
+    text-align: center;
+}
+
+.profile-card a {
+    background: transparent;
+    border: none;   
+    color: #f1c40f;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.suggested-users {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.suggested-heading{
+    font-size: 20px;
+}
+.user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-left .name h3 {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-left .name p {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.user button {
+    background: linear-gradient(98.63deg, #f9a225, #f95f35);
+    color: white;
+    width: 25%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+
+@media (max-width: 770px){
+    .left-aside{
+        display: none;
+    }
+}
+
+@media (min-width: 771px) and (max-width: 1010px){
+    .left-aside{
+        width: 60%;
+    }
+    .user-left .name h3{
+        font-size: 18px;
+    }
+    .user-left .name p{
+        font-size: 16px;
+    }
+    .profile-card img{
+        height: 110px;
+        width: 110px;
+    }
+    .profile-card h3{
+        font-size: 22px;
+    }
+    .profile-card p{
+        font-size: 18px;
+    }
+    .profile-card .follower-following{
+        padding: 8px 0;
+    }
+    .profile-card a{
+        font-size: 22px;
+    }
+    .suggested-heading{
+        font-size: 22px;
+    }
+    .user-left .name h3{
+        font-size: 18px;
+    }
+    .user-left .name p{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1011px){
+    .left-aside{
+        width: 26%;
+    }
+}
+/* @media (max-width: 900px){
+    .left-aside{
+        width: 40%;
+    }
+} */

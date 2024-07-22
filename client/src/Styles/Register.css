@@ -1,0 +1,106 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.file-info span {
+  margin-right: 10px;
+}
+
+.file-info button {
+  background: #ff4d4d;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background: linear-gradient(98.63deg, #f9a225, #f95f35);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(98.63deg, #f95f35, #f9a225);
+}
+
+button.login-direct {
+  width: 100%;
+  background: none;
+  border: 2px solid #f95f35;
+  color: #f95f35;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  margin-top: 10px;
+}
+
+button.login-direct:hover {
+  background: #f95f35;
+  color: #fff;
+}
+
+@media (max-width: 950px) {
+  .register-container {
+    
+    background: inherit;
+  }
+
+  form{
+    box-shadow: none;
+  }
+
+}
