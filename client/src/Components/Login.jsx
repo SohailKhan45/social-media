@@ -20,8 +20,6 @@ const Login = () => {
     setIsLoading(true)
     e.preventDefault();
     try {
-      console.log(credentials, 'Sending request')
-      console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL); 
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/users/login`, credentials, { withCredentials: true });
 
       if (response?.status === 200) {

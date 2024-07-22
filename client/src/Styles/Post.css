@@ -64,7 +64,7 @@
     align-items: flex-start;
     gap: 15px;
 }
-.post-icons i{
+.post-icons .icon{
     font-size: 30px;
     cursor: pointer;
 }
