@@ -6,22 +6,21 @@ A social media application built using the MERN (MongoDB, Express, React, Node.j
 
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
 - [Frontend Components](#frontend-components)
 - [Backend Services](#backend-services)
 - [Environment Variables](#environment-variables)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
 - User authentication and authorization (JWT)
 - Create, read, update, and delete posts
-- Upload and display images and videos
+- Register, login, update user and profile
+- Upload and display images
 - Like and unlike posts
 - Responsive design
+- Cloudinary for uploading images to cloud
+- Multer for file uploading files and handling multi-part data
 
 ## Installation
 
