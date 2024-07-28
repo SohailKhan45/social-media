@@ -10,12 +10,10 @@ dotenv.config()
 
 const PORT = process.env.PORT || 7010
 const app = express()
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000"
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "http://192.168.183.126:3000"
-    ],
+    origin: FRONTEND_URL,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
