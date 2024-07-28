@@ -32,7 +32,8 @@ app.use('/api/posts', postRouter);
 
 // Serve static files from the React app
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '../client/build')));
+console.log(path.join(__dirname, '../client/build'))
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Catch-all route to serve index.html for all non-API routes
 app.get('*', (req, res) => {
