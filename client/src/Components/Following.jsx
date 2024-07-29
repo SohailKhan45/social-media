@@ -6,13 +6,13 @@ import "../Styles/Following.css";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import UserContext from '../Context/UserContext';
-
+import { Oval } from 'react-loader-spinner';
 
 const Following = ({ userId, onClose, onUnfollow }) => {
   const [following, setFollowing] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const { user } = useContext(UserContext)
-  const isOwner = userId === user
+  const { user } = useContext(UserContext);
+  const isOwner = userId === user;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,15 +28,15 @@ const Following = ({ userId, onClose, onUnfollow }) => {
           params: { userId },
           headers: { Authorization: `Bearer ${token}` }
         });
-        setIsLoaded(true);
         setFollowing(response.data.following);
       } catch (error) {
         if (error?.response?.status === 401) {
-          navigate('/login')
-          sessionStorage.clear()
+          navigate('/login');
+          sessionStorage.clear();
         }
+        toast.error(error?.response?.data?.msg || 'Error while fetching following');
+      } finally {
         setIsLoaded(true);
-        toast.error(error?.response?.data?.msg || 'Error while fetching following')
       }
     };
     fetchFollowing();
@@ -45,10 +45,10 @@ const Following = ({ userId, onClose, onUnfollow }) => {
   const handleUnfollow = async (followUserId) => {
     try {
       const token = sessionStorage.getItem('accessToken');
-        if (!token) {
-          navigate('/login')
-          return;
-        }
+      if (!token) {
+        navigate('/login');
+        return;
+      }
       await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/users/toggle-follow`,
         {
@@ -60,10 +60,10 @@ const Following = ({ userId, onClose, onUnfollow }) => {
       setFollowing(following.filter(user => user._id !== followUserId));
     } catch (error) {
       if (error?.response?.status === 401) {
-        navigate('/login')
-        sessionStorage.clear()
+        navigate('/login');
+        sessionStorage.clear();
       }
-      toast.error(error?.response?.data?.msg || 'Error while unfollowing')
+      toast.error(error?.response?.data?.msg || 'Error while unfollowing');
     }
   };
 
@@ -100,7 +100,18 @@ const Following = ({ userId, onClose, onUnfollow }) => {
             <li>No users to display</li>
           )
         ) : (
-          <li>Loading...</li>
+          <div className="loader-container">
+            <Oval
+              height={30}
+              width={30}
+              color="#4fa94d"
+              visible={true}
+              ariaLabel='oval-loading'
+              secondaryColor="#4fa94d"
+              strokeWidth={2}
+              strokeWidthSecondary={2}
+            />
+          </div>
         )}
       </ul>
     </div>

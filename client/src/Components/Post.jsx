@@ -34,23 +34,8 @@ const Post = ({ post, userData }) => {
     setLikeCount(post?.likes?.length || 0);
   }, [post]);
 
-  const handleLikeClick = debounce(async () => {
-    if (loading) return;
-    setLoading(true);
-
-    const previousLiked = liked;
-    const previousLikeCount = likeCount;
-
-    // Optimistic UI update
-    setLiked(!previousLiked);
-    setLikeCount(previousLiked ? previousLikeCount - 1 : previousLikeCount + 1);
-
+  const sendLikeRequest = debounce(async (data, previousLiked, previousLikeCount) => {
     try {
-      const data = {
-        userId: userData._id,
-        postId: post._id,
-      };
-
       const token = sessionStorage.getItem('accessToken');
       if (!token) {
         navigate('/login');
@@ -73,6 +58,25 @@ const Post = ({ post, userData }) => {
       setLoading(false);
     }
   }, 300);
+
+  const handleLikeClick = () => {
+    if (loading) return;
+
+    const previousLiked = liked;
+    const previousLikeCount = likeCount;
+
+    // Optimistic UI update
+    setLiked(!previousLiked);
+    setLikeCount(previousLiked ? previousLikeCount - 1 : previousLikeCount + 1);
+
+    const data = {
+      userId: userData._id,
+      postId: post._id,
+    };
+
+    setLoading(true);
+    sendLikeRequest(data, previousLiked, previousLikeCount);
+  };
 
   const handleDeleteClick = async () => {
     const toastId = toast.loading("Deleting...");

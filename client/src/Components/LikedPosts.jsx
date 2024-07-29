@@ -3,6 +3,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import UserContext from '../Context/UserContext';
 import Post from './Post';
+import { Oval } from 'react-loader-spinner';
 
 const LikedPosts = () => {
 
@@ -23,10 +24,18 @@ const LikedPosts = () => {
     <div className="liked-posts-container">
       <h1>Liked Posts</h1>
       {loading ? (
-        // <div className="loader" style={{height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
-        //   <Oval color="green" height={50} width={50} />
-        // </div>
-        <h1>Loading...</h1>
+        <div className="loader-container">
+        <Oval
+          height={80}
+          width={80}
+          color="#4fa94d"
+          visible={true}
+          ariaLabel='oval-loading'
+          secondaryColor="#4fa94d"
+          strokeWidth={2}
+          strokeWidthSecondary={2}
+        />
+      </div>
       ) : likedPosts.length > 0 ? (
         likedPosts.map((post) => (
           <Post key={post._id} post={post} userData={userData} />
