@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useContext, useEffect, useState } from 'react';
 import UserContext from '../Context/UserContext';
 import Post from './Post';
-import { Oval } from "react-loader-spinner"
 
 const LikedPosts = () => {
 

@@ -1,14 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useContext, useEffect, useState } from 'react'
 import UserContext from '../Context/UserContext'
 import Post from './Post'
 import CreatePost from './CreatePost'
-import { Oval } from 'react-loader-spinner'
 
 
 const PostContainer = () => {
 
   const [loading, setLoading] = useState(true)
-  const { userData, posts, fetchAllPosts, user } = useContext(UserContext)
+  const { userData, posts, fetchAllPosts } = useContext(UserContext)
 
   useEffect(() => {
     
